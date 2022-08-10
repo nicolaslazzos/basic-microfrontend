@@ -5,7 +5,7 @@ module.exports = {
   mode: 'development',
   devServer: { port: 8082 },
   plugins: [
-    new ModuleFederationPlugin({ name: 'cart', filename: 'remoteEntry.js', exposes: { './Cart': './src/index' } }),
+    new ModuleFederationPlugin({ name: 'cart', filename: 'remoteEntry.js', exposes: { './Cart': './src/index' }, shared: ['@faker-js/faker'] }),
     new HtmlWebpackPlugin({ template: './public/index.html' })
   ]
 };
